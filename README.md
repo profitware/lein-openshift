@@ -11,7 +11,7 @@ Inspired by https://blog.openshift.com/using-clojure-on-openshift/
 In `:plugins` in your `project.clj`:
 
 ```text
-[lein-openshift "0.1.0"]
+[lein-openshift "0.1.1"]
 ```
 
 To build uberjar for your application and release it to OpenShift via S2I builder:

@@ -158,9 +158,9 @@
                               (openshift-new-app namespace app environment)
                               (openshift-patch-recreate namespace app recreate)
                               (openshift-expose namespace app domains))
-                       (do (main/info "Openshift application released.")
-                           (main/exit 0))
+                       (main/info "Openshift application released.")
                        (do (main/warn "Openshift application could not be released.")
                            (main/exit 1))))
-        (do (let [exit-code (apply exec args)]
-              (main/exit exit-code)))))))
+        (let [exit-code (apply exec args)]
+          (when (> exit-code 0)
+            (main/exit exit-code)))))))
